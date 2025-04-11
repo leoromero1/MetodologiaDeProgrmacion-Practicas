@@ -45,4 +45,20 @@ public class Helpers
             c.Agregar(persona);
         }
     }
+
+    public static void LlenarAlumnos(Coleccionable c)
+    {
+        Random random = new Random();
+        for (int i = 0; i < 20; i++)
+        {
+            string nombre = "Alumno" + i;
+            int dni = random.Next(38611820, 38611850);
+            int legajo = random.Next(0, 25);
+            float promedio = (float)(random.NextDouble() * 10);
+
+            Alumno alumno = new Alumno(nombre, dni, legajo, promedio);
+
+            c.Agregar(alumno);
+        }
+    }
 }
