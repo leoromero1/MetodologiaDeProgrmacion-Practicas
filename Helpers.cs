@@ -22,15 +22,16 @@ public class Helpers
         Console.Write("Maximo: ");
         Console.WriteLine(c.Maximo());
         Console.WriteLine("Ingrese un número a buscar");
-        Numero num = new(int.Parse(Console.ReadLine()!));
-        if (c.Contiene(num))
+        int dni = int.Parse(Console.ReadLine()!);
+        Persona persona = new Persona("Leo", dni);
+        if (c.Contiene(persona))
         {
-            Console.WriteLine($"El elemento {num} está en la selección.");
+            Console.WriteLine($"El elemento {persona} está en la selección.");
             Console.WriteLine("----------------------------------------");
         }
         else
         {
-            Console.WriteLine($"El elemento {num} no esta en la selección");
+            Console.WriteLine($"El elemento {persona} no esta en la selección");
             Console.WriteLine("------------------------------------------");
         }
     }
