@@ -12,4 +12,26 @@ public class Helpers
             c.Agregar(new Numero(random.Next(1, 50)));
         }
     }
+
+    public static void Informar(Coleccionable c)
+    {
+        Console.Write("Cuantos: ");
+        Console.WriteLine(c.Cuantos());
+        Console.Write("Minimo: ");
+        Console.WriteLine(c.Minimo());
+        Console.Write("Maximo: ");
+        Console.WriteLine(c.Maximo());
+        Console.WriteLine("Ingrese un número a buscar");
+        Numero num = new(int.Parse(Console.ReadLine()!));
+        if (c.Contiene(num))
+        {
+            Console.WriteLine($"El elemento {num} está en la selección.");
+            Console.WriteLine("----------------------------------------");
+        }
+        else
+        {
+            Console.WriteLine($"El elemento {num} no esta en la selección");
+            Console.WriteLine("------------------------------------------");
+        }
+    }
 }
