@@ -34,4 +34,14 @@ public class Helpers
             Console.WriteLine("------------------------------------------");
         }
     }
+
+    public static void LlenarPersonas(Coleccionable c)
+    {
+        Random random = new Random();
+        for (int i = 0; i < 20; i++)
+        {
+            Persona persona = new Persona("Leo", random.Next(38611820, 38611850));
+            c.Agregar(persona);
+        }
+    }
 }
