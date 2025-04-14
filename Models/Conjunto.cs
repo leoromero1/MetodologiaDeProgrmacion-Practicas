@@ -2,7 +2,7 @@ using Practicas.Interfaces;
 
 namespace Practicas.Models;
 
-public class Conjunto
+public class Conjunto : Coleccionable
 {
     private List<Comparable> elementos;
 
@@ -26,5 +26,35 @@ public class Conjunto
         {
             elementos.Add(c);
         }
+    }
+
+    public int Cuantos()
+    {
+        return elementos.Count;
+    }
+    public Comparable Minimo()
+    {
+        Comparable minimo = elementos[0];
+        foreach (Comparable item in elementos)
+        {
+            if (item.SosMenor(minimo))
+                minimo = item;
+        }
+        return minimo;
+    }
+    public Comparable Maximo()
+    {
+        Comparable maximo = elementos[0];
+        foreach (Comparable item in elementos)
+        {
+            if (item.SosMayor(maximo))
+                maximo = item;
+        }
+        return maximo;
+    }
+
+    public bool Contiene(Comparable c)
+    {
+        return Pertenece(c);
     }
 }
