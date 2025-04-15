@@ -1,5 +1,6 @@
 using Practicas.Interfaces;
 using Practicas.Models;
+using Practicas.Strategy;
 
 namespace Practicas;
 public class Helpers
@@ -22,8 +23,9 @@ public class Helpers
         Console.Write("Maximo: ");
         Console.WriteLine(c.Maximo());
         Console.WriteLine("Ingrese un número a buscar");
+        
         int dni = int.Parse(Console.ReadLine()!);
-        Persona persona = new Persona("Leo", dni);
+        Alumno persona = new Alumno("Leo", dni, 0, 0);
         if (c.Contiene(persona))
         {
             Console.WriteLine($"El elemento {persona} está en la selección.");
@@ -70,6 +72,22 @@ public class Helpers
         {
             Comparable com = iterador.Actual();
             Console.WriteLine(com);
+            iterador.Siguiente();
+        }
+    }
+
+    public static void CambiarEstrategia(Iterable i, EstrategiaDeComparacion estrategia)
+    {
+
+        Iterador iterador = i.CrearIterador();
+        iterador.Primero();
+        while (!iterador.Fin())
+        {
+            Comparable com = iterador.Actual();
+            if (com is Alumno alumno)
+            {
+                alumno.SetEstrategia(estrategia);
+            }
             iterador.Siguiente();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Practicas;
 using Practicas.Models;
+using Practicas.Strategy;
 
 class Program
 {
@@ -17,5 +18,13 @@ class Program
         Helpers.ImprimirDocumentos(cola);
         Console.WriteLine("Documentos de Conjunto:");
         Helpers.ImprimirDocumentos(conjunto);
+        Console.WriteLine("Cambiando estrategia a EstrategiaPorDni...");
+        Helpers.CambiarEstrategia(pila, new EstrategiaPorDni());
+        Console.WriteLine("Con estrategia por DNI:");
+        Helpers.Informar(pila);
+        Console.WriteLine("Cambiando estrategia a EstrategiaPorPromedio...");
+        Helpers.CambiarEstrategia(pila, new EstrategiaPorPromedio());
+        Console.WriteLine("Con estrategia por Promedio:");
+        Helpers.Informar(pila);
     }
 }

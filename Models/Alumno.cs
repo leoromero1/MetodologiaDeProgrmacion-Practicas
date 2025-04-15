@@ -27,6 +27,11 @@ public class Alumno : Persona
     {
         estrategia = e;
     }
+    public override string ToString()
+    {
+        return $"Nombre: {GetNombre()}, DNI: {GetDni()}, Legajo: {GetLegajo()}, Promedio: {GetPromedio():0.00}";
+    }
+
 
     public override bool SosIgual(Comparable c)
     {
