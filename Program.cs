@@ -7,10 +7,15 @@ class Program
     {
         Pila pila = new Pila();
         Cola cola = new Cola();
-        ColeccionMultiple coleccion = new ColeccionMultiple(pila, cola);
-        Helpers.LlenarPersonas(pila);
-        Helpers.LlenarPersonas(cola);
-        Console.Write("Coleccion:");
-        Helpers.Informar(coleccion);
+        Conjunto conjunto = new Conjunto();
+        Helpers.LlenarAlumnos(pila);
+        Helpers.LlenarAlumnos(cola);
+        Helpers.LlenarAlumnos(conjunto);
+        Console.WriteLine("Documentos de Pila:");
+        Helpers.ImprimirDocumentos(pila);
+        Console.WriteLine("Documentos de Cola:");
+        Helpers.ImprimirDocumentos(cola);
+        Console.WriteLine("Documentos de Conjunto:");
+        Helpers.ImprimirDocumentos(conjunto);
     }
 }
