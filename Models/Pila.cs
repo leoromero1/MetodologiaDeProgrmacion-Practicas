@@ -1,7 +1,7 @@
 using Practicas.Interfaces;
 
 namespace Practicas.Models;
-public class Pila : Coleccionable
+public class Pila : Coleccionable, Iterable
 {
     private List<Comparable> elementos;
 
@@ -65,5 +65,9 @@ public class Pila : Coleccionable
             }
         }
         return false;
+    }
+    public Iterador CrearIterador()
+    {
+        return new IteradorGeneral(elementos);
     }
 }

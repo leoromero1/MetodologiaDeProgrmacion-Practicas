@@ -2,7 +2,7 @@ using Practicas.Interfaces;
 
 namespace Practicas.Models;
 
-public class Conjunto : Coleccionable
+public class Conjunto : Coleccionable, Iterable
 {
     private List<Comparable> elementos;
 
@@ -56,5 +56,10 @@ public class Conjunto : Coleccionable
     public bool Contiene(Comparable c)
     {
         return Pertenece(c);
+    }
+
+    public Iterador CrearIterador()
+    {
+        return new IteradorGeneral(elementos);
     }
 }
