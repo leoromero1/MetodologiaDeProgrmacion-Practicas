@@ -61,4 +61,16 @@ public class Helpers
             c.Agregar(alumno);
         }
     }
+
+    public static void ImprimirDocumentos(Iterable i)
+    {
+        Iterador iterador = i.CrearIterador();
+        iterador.Primero();
+        while (!iterador.Fin())
+        {
+            Comparable com = iterador.Actual();
+            Console.WriteLine(com);
+            iterador.Siguiente();
+        }
+    }
 }
