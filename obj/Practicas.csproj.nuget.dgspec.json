@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Users\\Desktop\\leo\\FACU\\2025\\MDP 1\\Practicas\\Practicas.csproj": {}
+    "C:\\Users\\Users\\Desktop\\Practicas\\Practicas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Users\\Desktop\\leo\\FACU\\2025\\MDP 1\\Practicas\\Practicas.csproj": {
+    "C:\\Users\\Users\\Desktop\\Practicas\\Practicas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Users\\Desktop\\leo\\FACU\\2025\\MDP 1\\Practicas\\Practicas.csproj",
+        "projectUniqueName": "C:\\Users\\Users\\Desktop\\Practicas\\Practicas.csproj",
         "projectName": "Practicas",
-        "projectPath": "C:\\Users\\Users\\Desktop\\leo\\FACU\\2025\\MDP 1\\Practicas\\Practicas.csproj",
+        "projectPath": "C:\\Users\\Users\\Desktop\\Practicas\\Practicas.csproj",
         "packagesPath": "C:\\Users\\Users\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Users\\Desktop\\leo\\FACU\\2025\\MDP 1\\Practicas\\obj\\",
+        "outputPath": "C:\\Users\\Users\\Desktop\\Practicas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Users\\AppData\\Roaming\\NuGet\\NuGet.Config"
