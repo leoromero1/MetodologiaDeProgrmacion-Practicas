@@ -1,3 +1,4 @@
+using Practicas.FactoryMethod;
 using Practicas.Interfaces;
 using Practicas.Models;
 using Practicas.Strategy;
@@ -5,16 +6,16 @@ using Practicas.Strategy;
 namespace Practicas;
 public class Helpers
 {
-    public static void Llenar(Coleccionable c)
+    public static void Llenar(Coleccionable c, int opcion)
     {
-        Random random = new Random();
         for (int i = 0; i < 20; i++)
         {
-            c.Agregar(new Numero(random.Next(1, 50)));
+            Comparable comparable = FabricaDeComparables.CrearAleatorio(opcion);
+            c.Agregar(comparable);
         }
     }
 
-    public static void Informar(Coleccionable c)
+    public static void Informar(Coleccionable c, int opcion)
     {
         Console.Write("Cuantos: ");
         Console.WriteLine(c.Cuantos());
@@ -22,18 +23,15 @@ public class Helpers
         Console.WriteLine(c.Minimo());
         Console.Write("Maximo: ");
         Console.WriteLine(c.Maximo());
-        Console.WriteLine("Ingrese un número a buscar");
-        
-        int dni = int.Parse(Console.ReadLine()!);
-        Alumno persona = new Alumno("Leo", dni, 0, 0);
-        if (c.Contiene(persona))
+        Comparable comparable = FabricaDeComparables.CrearAleatorio(opcion);
+        if (c.Contiene(comparable))
         {
-            Console.WriteLine($"El elemento {persona} está en la selección.");
+            Console.WriteLine($"El elemento {comparable} está en la selección.");
             Console.WriteLine("----------------------------------------");
         }
         else
         {
-            Console.WriteLine($"El elemento {persona} no esta en la selección");
+            Console.WriteLine($"El elemento {comparable} no esta en la selección");
             Console.WriteLine("------------------------------------------");
         }
     }

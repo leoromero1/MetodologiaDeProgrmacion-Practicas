@@ -13,7 +13,7 @@ public class Alumno : Persona
     {
         Legajo = legajo;
         Promedio = promedio;
-        estrategia = new EstrategiaPorDni();
+        estrategia = new EstatategiaPorNombre();
     }
     public int GetLegajo()
     {

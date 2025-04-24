@@ -1,13 +1,13 @@
 ﻿
+using Practicas;
 using Practicas.Models;
 class Program
 {
     public static void Main(string[] args)
     {
-        GeneradorDeDatosAleatorios generador = new GeneradorDeDatosAleatorios();
-        int numeroAleatorio = generador.NumeroAleatorio(10);
-        Console.WriteLine($"numeroAleatorio: {numeroAleatorio}");
-        string cadenaAleatoria = generador.StringAleatorio(numeroAleatorio);
-        Console.WriteLine($"cadenaAleatoria: {cadenaAleatoria}");
+        Pila pila = new Pila();
+        Console.WriteLine("Pila: ");
+        Helpers.Llenar(pila, 2);
+        Helpers.Informar(pila, 2);
     }
 }
