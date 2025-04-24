@@ -105,4 +105,12 @@ public class Helpers
         }
     }
 
+    public static void DictadoDeClases(Profesor profe){
+        for (int i = 0; i < 5; i++)
+        {
+            profe.HablarEnClase();
+            profe.EscribirEnElPizarron();
+        }
+    }
+
 }
