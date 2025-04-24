@@ -1,17 +1,20 @@
 ﻿
 using Practicas;
+using Practicas.FactoryMethod;
 using Practicas.Models;
-using Practicas.Strategy;
 class Program
 {
     public static void Main(string[] args)
     {
-        Pila pila = new Pila();
-        Helpers.Llenar(pila, 3);
-        Console.WriteLine("Profesores:");
-        Helpers.ImprimirDocumentos(pila);
-        Console.WriteLine("Estrategia por antigüedad:");
-        Helpers.CambiarEstrategiaProfesores(pila, new EstrategiaPorAntiguedad());
-        Helpers.Informar(pila, 3);
+        Profesor profesor = (Profesor)FabricaDeComparables.CrearAleatorio(3);
+
+        for (int i = 0; i < 20; i++)
+        {
+            Alumno alumno = (Alumno)FabricaDeComparables.CrearAleatorio(2);
+            profesor.AgregarObservador(alumno);
+        }
+        Console.WriteLine(profesor);
+        Helpers.DictadoDeClases(profesor);
+
     }
 }
