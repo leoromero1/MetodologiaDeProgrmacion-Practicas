@@ -45,4 +45,17 @@ public class Alumno : Persona
     {
         return estrategia.SosMayor(this, (Alumno)c);
     }
+
+    public void PrestarAtencion()
+    {
+        Console.WriteLine("Prestando atención");
+    }
+
+    public void Distraerse()
+    {
+        Random random = new Random();
+        string[] palabara = ["Mirando el celular", "Dibujando en el margen de la carpeta", "tirando aviones de papel"];
+        int i = random.Next(0, palabara.Length);
+        Console.WriteLine(palabara[i]);
+    }
 }
