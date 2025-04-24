@@ -5,15 +5,15 @@ public class EstatategiaPorNombre : EstrategiaDeComparacion
 {
     public bool SosIgual(Alumno a, Alumno b)
     {
-        return int.Parse(a.GetNombre()) == int.Parse(b.GetNombre());
+        return a.GetNombre() == b.GetNombre();
     }
     public bool SosMenor(Alumno a, Alumno b)
     {
-        return int.Parse(a.GetNombre()) < int.Parse(b.GetNombre());
+        return string.Compare(a.GetNombre(), b.GetNombre()) < 0;
     }
     public bool SosMayor(Alumno a, Alumno b)
     {
-        return int.Parse(a.GetNombre()) > int.Parse(b.GetNombre());
+        return string.Compare(a.GetNombre(), b.GetNombre()) > 0;
     }
 
 }
