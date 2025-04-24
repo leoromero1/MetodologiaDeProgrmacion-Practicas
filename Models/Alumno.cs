@@ -2,7 +2,7 @@ using Practicas.Interfaces;
 using Practicas.Strategy;
 
 namespace Practicas.Models;
-public class Alumno : Persona
+public class Alumno : Persona, Observador
 {
     private int Legajo;
     private float Promedio;
@@ -58,4 +58,17 @@ public class Alumno : Persona
         int i = random.Next(0, palabara.Length);
         Console.WriteLine(palabara[i]);
     }
+
+    public void Actualizar(Observado o)
+    {
+
+        if (o is Profesor profesor)
+        {
+            if (profesor.Actual == "hablar")
+                PrestarAtencion();
+            else if (profesor.Actual == "escribir")
+                Distraerse();
+        }
+    }
 }
+
