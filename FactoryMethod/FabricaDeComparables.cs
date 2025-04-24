@@ -11,6 +11,7 @@ public abstract class FabricaDeComparables
         {
             case 1: fabrica = new FabricaDeNumeros(); break;
             case 2: fabrica = new FabricaDeAlumnos(); break;
+            case 3: fabrica = new FabricaDeProfesores(); break;
         }
 
         return fabrica!.CrearAleatorio();

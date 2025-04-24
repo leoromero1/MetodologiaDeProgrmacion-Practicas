@@ -89,4 +89,20 @@ public class Helpers
             iterador.Siguiente();
         }
     }
+
+    public static void CambiarEstrategiaProfesores(Iterable i, EstrategiaProfesor estrategia)
+    {
+        Iterador iterador = i.CrearIterador();
+        iterador.Primero();
+        while (!iterador.Fin())
+        {
+            Comparable com = iterador.Actual();
+            if (com is Profesor profesor)
+            {
+                profesor.SetEstrategia(estrategia);
+            }
+            iterador.Siguiente();
+        }
+    }
+
 }
