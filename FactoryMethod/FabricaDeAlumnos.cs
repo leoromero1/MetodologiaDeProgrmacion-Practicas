@@ -12,6 +12,7 @@ public class FabricaDeAlumnos : FabricaDeComparables
         int dni = random.Next(18, 30);
         int legajo = random.Next(0, 25);
         float promedio = (float)(random.NextDouble() * 10);
-        return new Alumno(nombre, dni, legajo, promedio);
+        int calificacion = random.Next(1, 11);
+        return new Alumno(nombre, dni, legajo, promedio, calificacion);
     }
 }

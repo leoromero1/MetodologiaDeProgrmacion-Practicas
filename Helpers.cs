@@ -55,8 +55,9 @@ public class Helpers
             int dni = random.Next(38611820, 38611850);
             int legajo = random.Next(0, 25);
             float promedio = (float)(random.NextDouble() * 10);
+            int calificacion = random.Next(1, 11);
 
-            Alumno alumno = new Alumno(nombre, dni, legajo, promedio);
+            Alumno alumno = new Alumno(nombre, dni, legajo, promedio, calificacion);
 
             c.Agregar(alumno);
         }

@@ -6,14 +6,16 @@ public class Alumno : Persona, Observador
 {
     private int Legajo;
     private float Promedio;
+    private int Calificacion;
 
     private EstrategiaDeComparacion estrategia;
 
-    public Alumno(string nombre, int dni, int legajo, float promedio) : base(nombre, dni)
+    public Alumno(string nombre, int dni, int legajo, float promedio, int calificacion) : base(nombre, dni)
     {
         Legajo = legajo;
         Promedio = promedio;
         estrategia = new EstatategiaPorNombre();
+        Calificacion = calificacion;
     }
     public int GetLegajo()
     {
@@ -29,7 +31,7 @@ public class Alumno : Persona, Observador
     }
     public override string ToString()
     {
-        return $"Nombre: {GetNombre()}, DNI: {GetDni()}, Legajo: {GetLegajo()}, Promedio: {GetPromedio():0.00}";
+        return $"Nombre: {GetNombre()}, DNI: {GetDni()}, Legajo: {GetLegajo()}, Promedio: {GetPromedio():0.00}, Calificacion: {GetCalificacion()}";
     }
 
 
@@ -69,6 +71,27 @@ public class Alumno : Persona, Observador
             else if (profesor.Actual == "escribir")
                 Distraerse();
         }
+    }
+
+    public int GetCalificacion()
+    {
+        return Calificacion;
+    }
+    public void SetCalificacion(int calificacion)
+    {
+        Calificacion = calificacion;
+    }
+
+    public int ResponderPregunta(int pregunta)
+    {
+        Random random = new Random();
+        int respuesta = random.Next(1, 4);
+        return respuesta;
+    }
+
+    public string MostrarCalificacion()
+    {
+        return $"{GetNombre()}\t{GetCalificacion()}";
     }
 }
 
