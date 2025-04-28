@@ -1,20 +1,34 @@
-﻿
-using Practicas;
+﻿using Practicas;
 using Practicas.FactoryMethod;
 using Practicas.Models;
+
 class Program
 {
     public static void Main(string[] args)
     {
-        Profesor profesor = (Profesor)FabricaDeComparables.CrearAleatorio(3);
-
-        for (int i = 0; i < 20; i++)
+        Teacher teacher = new Teacher();
+        FabricaDeAlumnos fabrica = new FabricaDeAlumnos();
+        for (int i = 0; i < 10; i++)
         {
-            Alumno alumno = (Alumno)FabricaDeComparables.CrearAleatorio(2);
-            profesor.AgregarObservador(alumno);
+            Alumno alumno = (Alumno)fabrica.CrearAleatorio();
+            AlumnoAdapter adaptado = new AlumnoAdapter(alumno);
+            teacher.goToClass(adaptado);
         }
-        Console.WriteLine(profesor);
-        Helpers.DictadoDeClases(profesor);
+        
+        for (int i = 0; i < 10; i++)
+        {
+            Alumno alumno = (Alumno)fabrica.CrearAleatorio();
+            AlumnoMuyEstudioso alumnoEstudioso = new AlumnoMuyEstudioso(
+                alumno.GetNombre(),
+                alumno.GetDni(),
+                alumno.GetLegajo(),
+                alumno.GetPromedio(),
+                alumno.GetCalificacion()
+            );
+            AlumnoAdapter adaptado = new AlumnoAdapter(alumnoEstudioso);
+            teacher.goToClass(adaptado);
+        }
 
+        teacher.teachingAClass();
     }
 }
