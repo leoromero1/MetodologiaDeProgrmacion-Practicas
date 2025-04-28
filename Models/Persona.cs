@@ -1,7 +1,7 @@
 using Practicas.Interfaces;
 
 namespace Practicas.Models;
-public class Persona : Comparable
+public abstract class Persona : Comparable
 {
     private string Nombre;
     private int Dni;
@@ -18,7 +18,7 @@ public class Persona : Comparable
     {
         return Dni;
     }
-    override public string ToString()
+    public virtual string String()
     {
         return GetDni().ToString();
     }
