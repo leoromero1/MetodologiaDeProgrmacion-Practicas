@@ -82,7 +82,7 @@ public class Alumno : Persona, Observador
         Calificacion = calificacion;
     }
 
-    public int ResponderPregunta(int pregunta)
+    public virtual int ResponderPregunta(int pregunta)
     {
         Random random = new Random();
         int respuesta = random.Next(1, 4);
