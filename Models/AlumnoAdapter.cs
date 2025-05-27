@@ -1,9 +1,11 @@
+using Practicas.Interfaces;
+
 namespace Practicas.Models;
+
 public class AlumnoAdapter : Student
 {
-    private Alumno Alumno;
-
-    public AlumnoAdapter(Alumno alumno)
+    private IAlumno Alumno;
+    public AlumnoAdapter(IAlumno alumno)
     {
         Alumno = alumno;
     }
@@ -12,17 +14,17 @@ public class AlumnoAdapter : Student
     {
         return Alumno.GetNombre();
     }
+    public string showResult()
+    {
+        return Alumno.MostrarCalificacion();
+    }
     public int yourAnswerIs(int question)
     {
         return Alumno.ResponderPregunta(question);
     }
     public void setScore(int score)
     {
-
-    }
-    public string showResult()
-    {
-        return Alumno.MostrarCalificacion();
+        Alumno.SetCalificacion(score);
     }
     public bool equals(Student student)
     {
@@ -35,5 +37,9 @@ public class AlumnoAdapter : Student
     public bool greaterThan(Student student)
     {
         return Alumno.SosMayor(((AlumnoAdapter)student).Alumno);
+    }
+    public float GetPromedio()
+    {
+        return Alumno.GetPromedio();
     }
 }

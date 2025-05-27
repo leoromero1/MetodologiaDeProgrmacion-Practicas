@@ -2,7 +2,7 @@ using Practicas.Interfaces;
 using Practicas.Strategy;
 
 namespace Practicas.Models;
-public class Alumno : Persona, Observador
+public class Alumno : Persona, Observador, IAlumno
 {
     private int Legajo;
     private float Promedio;
@@ -14,7 +14,7 @@ public class Alumno : Persona, Observador
     {
         Legajo = legajo;
         Promedio = promedio;
-        estrategia = new EstatategiaPorNombre();
+        estrategia = new EstrategiaPorPromedio();
         Calificacion = calificacion;
     }
     public int GetLegajo()
@@ -37,15 +37,15 @@ public class Alumno : Persona, Observador
 
     public override bool SosIgual(Comparable c)
     {
-        return estrategia.SosIgual(this, (Alumno)c);
+        return estrategia.SosIgual(this, (IAlumno)c);
     }
     public override bool SosMenor(Comparable c)
     {
-        return estrategia.SosMenor(this, (Alumno)c);
+        return estrategia.SosMenor(this, (IAlumno)c);
     }
     public override bool SosMayor(Comparable c)
     {
-        return estrategia.SosMayor(this, (Alumno)c);
+        return estrategia.SosMayor(this, (IAlumno)c);
     }
 
     public void PrestarAtencion()

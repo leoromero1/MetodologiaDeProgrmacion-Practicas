@@ -4,15 +4,15 @@ using Practicas.Models;
 namespace Practicas.Strategy;
 public class EstrategiaPorLegajo : EstrategiaDeComparacion
 {
-    public bool SosIgual(Alumno a, Alumno b)
+    public bool SosIgual(IAlumno a, IAlumno b)
     {
         return a.GetLegajo() == b.GetLegajo();
     }
-    public bool SosMenor(Alumno a, Alumno b)
+    public bool SosMenor(IAlumno a, IAlumno b)
     {
         return a.GetLegajo() < b.GetLegajo();
     }
-    public bool SosMayor(Alumno a, Alumno b)
+    public bool SosMayor(IAlumno a, IAlumno b)
     {
         return a.GetLegajo() > b.GetLegajo();
     }

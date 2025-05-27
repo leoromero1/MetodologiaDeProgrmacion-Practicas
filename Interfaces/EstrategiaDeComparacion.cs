@@ -1,10 +1,8 @@
-using Practicas.Models;
-
 namespace Practicas.Interfaces;
 
 public interface EstrategiaDeComparacion
 {
-    bool SosIgual(Alumno a1, Alumno a2);
-    bool SosMenor(Alumno a1, Alumno a2);
-    bool SosMayor(Alumno a1, Alumno a2);
+    bool SosIgual(IAlumno a1, IAlumno a2);
+    bool SosMenor(IAlumno a1, IAlumno a2);
+    bool SosMayor(IAlumno a1, IAlumno a2);
 }
